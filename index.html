@@ -1,0 +1,64 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprobados y Reprobados</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "app-logic": "./script.js"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2 style="color: blue; margin-bottom: 5px; font-size: 20px; text-align: center;">Alumnos</h2>
+        <h1>Aprobados y Reprobados</h1>
+
+        <div class="input-group">
+            <label for="totalStudents">Total de alumnos:</label>
+            <input type="number" id="totalStudents" min="0">
+        </div>
+
+        <div class="gender-inputs-container">
+            <div class="input-group">
+                <label for="femaleStudents">Total de alumnas femeninas:</label>
+                <input type="number" id="femaleStudents" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="maleStudents">Total de alumnos masculinos:</label>
+                <input type="number" id="maleStudents" min="0">
+            </div>
+        </div>
+
+        <div class="gender-inputs-container">
+            <div class="input-group">
+                <label for="femaleFailedStudents">Femeninas reprobadas:</label>
+                <input type="number" id="femaleFailedStudents" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="maleFailedStudents">Masculinos reprobados:</label>
+                <input type="number" id="maleFailedStudents" min="0">
+            </div>
+        </div>
+
+        <button id="calculateButton">Calcular</button>
+
+    </div>
+
+    <script type="module">
+      import { calculateApprovedStudents } from 'app-logic';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const calculateButton = document.getElementById('calculateButton');
+        if (calculateButton) {
+          calculateButton.addEventListener('click', calculateApprovedStudents);
+        }
+      });
+    </script>
+</body>
+</html>

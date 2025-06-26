@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0f2f7; /* Changed to a light blue */
+    margin: 0;
+}
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+h1 {
+    color: blue; /* Changed to blue */
+    font-weight: bold; /* Added bold */
+    margin-bottom: 25px;
+    font-size: 20px; /* Smaller font size for the title */
+    margin-top: 0; /* Move "Aprobados y Reprobados" up closer to "Alumnos" */
+}
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+/* START: Centering "Total de alumnos" input group */
+.input-group:first-of-type { /* Targets the first input-group, which is "Total de alumnos" */
+    text-align: center;
+}
+/* END: Centering "Total de alumnos" input group */
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+.input-group input[type="number"] {
+    width: 100px; /* Make the width smaller */
+    padding: 8px; /* Slightly reduce padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0 auto; /* Center the input within its group */
+    display: block; /* Make it a block element to allow margin:auto to work */
+    text-align: center; /* Center the numbers inside the input field */
+}
+/* New style for the border of the 'Total de alumnos' input */
+#totalStudents {
+    border-color: black;
+    border-width: 2px; /* Make the border thicker */
+}
+/* New styles for side-by-side input groups */
+.gender-inputs-container {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly with space around them */
+    gap: 15px; /* Space between the two input groups */
+    margin-bottom: 15px;
+}
+.gender-inputs-container .input-group {
+    flex: 1; /* Allow each input group to grow and shrink */
+    margin-bottom: 0; /* Remove bottom margin from individual groups inside this container */
+    text-align: center; /* Center content within each of these groups */
+}
+.gender-inputs-container .input-group label {
+    text-align: center; /* Center label text */
+    color: green; /* Changed to green */
+}
+.gender-inputs-container .input-group input[type="number"] {
+    margin: 0 auto; /* Ensure input is centered within its smaller flex container */
+    border-color: red; /* Changed to red border for gender inputs */
+    border-width: 2px; /* Thicker border for gender inputs */
+}
+/* Style for the "third row" (second gender-inputs-container) to have green borders */
+.gender-inputs-container:nth-of-type(2) input[type="number"] {
+    border-color: green; /* Changed to green */
+    border-width: 2px; /* Ensure it's thick */
+}
+
+/* Style for the "Femeninos reprobados" label */
+label[for="femaleFailedStudents"] {
+    color: red !important; /* Ensure this rule overrides the general green color */
+}
+
+/* Style for the "Masculinos reprobados" label */
+label[for="maleFailedStudents"] {
+    color: red !important; /* Ensure this rule overrides the general green color */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}
+/* Styles for the new window content */
+.print-window-body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #fff;
+    color: #333;
+}
+.print-window-container {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.print-window-container h2 {
+    color: #007bff;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+.print-window-container p {
+    font-size: 16px; /* Smaller font size for results */
+    margin: 10px 0; /* Slightly reduced margin */
+    line-height: 1.5;
+    display: flex; /* Enable flexbox for each result line */
+    justify-content: space-between; /* Push content to ends */
+    align-items: baseline; /* Align items along their text baseline */
+}
+.print-window-container p strong {
+    font-weight: bold;
+    color: black; /* Changed to black */
+    margin-right: 15px; /* Add some space between label and value */
+    flex-shrink: 0; /* Prevent label from shrinking */
+}
+.print-window-container p span.value { /* New style for the value */
+    text-align: right; /* Align the actual value to the right */
+    flex-grow: 1; /* Allow the value span to take up available space */
+}
+.print-window-close-button {
+    background-color: #000080; /* Changed to navy blue */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 25px; /* Reduced margin-top for the button */
+    transition: background-color 0.3s ease;
+}
+.print-window-close-button:hover {
+    background-color: #c82333;
+}
+/* New styles for approved/reprobated values and labels */
+.approved-value {
+    color: #28a745; /* Green color for approved */
+    font-weight: bold;
+}
+.failed-value {
+    color: #dc3545; /* Red color for reprobated */
+    font-weight: bold;
+}
+/* Styles for separating sections */
+.results-section {
+    margin-bottom: 30px;
+    border: 2px solid; /* Changed border thickness to 2px */
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white; /* Changed to white background */
+}
+.results-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
